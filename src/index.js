@@ -14,6 +14,11 @@ app.get("/", (req, res) => {
     res.json({ status: "ok", message: "Express server is running" });
 });
 
+// Explicit health endpoint used by preview orchestrator
+app.get("/api/health", (req, res) => {
+    res.json({ status: "ok" });
+});
+
 // API routes will be added here by the agent
 // Example: app.use("/api/users", usersRouter);
 
